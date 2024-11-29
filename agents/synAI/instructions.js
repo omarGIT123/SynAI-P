@@ -32,7 +32,7 @@ FINAL response is a valid JSON object :
   "finish_reason": "agent_call",
   "response": [
   {
-    "information": provide a detailed response, providing the information the user is asking for,
+    "information": provide a well formulated response in a paragraph format, providing the information the user is asking for,
     "section": section,
     (optional) "card" : project_name
   }
