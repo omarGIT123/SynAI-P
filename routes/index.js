@@ -2,7 +2,11 @@ const express = require("express");
 const agentSystem = require("../agents/synAI/index");
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.post("/", (req, res) => {
+  res.json({ ok: "OK" });
+});
+
+router.post("/get_info", async (req, res) => {
   try {
     const { input } = req.body;
 
