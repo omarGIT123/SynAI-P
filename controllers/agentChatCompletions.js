@@ -42,7 +42,7 @@ async function agentChatCompletions(
       model,
       max_tokens: 5000,
       temperature: 0.5,
-      top_p: 0.5,
+      top_p: 0.7,
       messages: conversation,
     };
 
@@ -73,11 +73,19 @@ async function agentChatCompletions(
         console.log(tool.args);
         const toolToCall = tools[toolName];
         let toolArgs = tool.args;
-        if (
-          Object.keys(toolArgs).length === 1 &&
-          Object.keys(toolArgs)[0].includes("section")
-        ) {
-          toolArgs = JSON.parse(toolArgs.section.replace(/'/g, '"'));
+        try {
+          // If it's a valid JSON string that can be parsed into an array, do it
+          const parsedSection = JSON.parse(toolArgs.section.replace(/'/g, '"'));
+
+          // Check if the parsed result is an array
+          if (Array.isArray(parsedSection)) {
+            toolArgs = parsedSection; // Wrap in an array
+          } else {
+            toolArgs = [toolArgs.section]; // It's not an array, just put the string in an array
+          }
+        } catch (e) {
+          // If parsing fails, treat it as a plain string and wrap in an array
+          toolArgs = [toolArgs.section];
         }
         console.log("toolName", toolName, "toolArgs", toolArgs);
         try {

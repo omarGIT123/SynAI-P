@@ -9,7 +9,8 @@ async function agentSystem(userMessage) {
     tools,
     userMessage.toLowerCase()
   );
-  return resp.response;
+  return resp.parseResponse;
 }
 
+console.log(agentSystem("who is omar? and where does he work currently?"));
 module.exports = agentSystem;
