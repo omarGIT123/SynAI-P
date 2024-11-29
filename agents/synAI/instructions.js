@@ -34,8 +34,8 @@ FINAL response is a valid JSON object :
   {
     "information": provide a well formulated response in a paragraph format, providing the information the user is asking for,
     "section": section,
-    (Mandatory when section is 'portfolio') "card" : project_name
-  }
+    (Mandatory when section is 'portfolio') "card" : one_project_name
+  } 
     ]
 }
 
