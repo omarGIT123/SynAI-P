@@ -40,9 +40,9 @@ async function agentChatCompletions(
     countExec++;
     const body = {
       model,
-      max_tokens: 5000,
-      temperature: 0.5,
-      top_p: 0.7,
+      max_tokens: 2000,
+      temperature: 0.8,
+      top_p: 0.9,
       messages: conversation,
     };
 

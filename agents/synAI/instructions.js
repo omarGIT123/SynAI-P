@@ -20,11 +20,10 @@ Portfolio sections:
   
 2) If the input is in the format : {"call_reason" : "relay_response","user_message" : message , "function_response" : function_response} :
 
-    - Analyze the information related to the user's response and write a clear, fun and complete response in a human written way.
-    - Make your response perfectly written.
+    - Analyze the information provided and write a clear, fun and complete response in a human written way.
+    - Make your response perfectly written in a cohesive paragraph.
     - Your response must be clear, concise and contains all the necessary information.
     - Redirect the user to the appropriate section of the portfolio on which you are focusing.
-    - Respect the response format.
     - Response format is a json object (add the necessary sections that answer the user's message in the response list)
 
 FINAL response is a valid JSON object : 
