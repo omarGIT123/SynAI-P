@@ -41,8 +41,8 @@ async function agentChatCompletions(
     const body = {
       model,
       max_tokens: 2000,
-      temperature: 0.4,
-      top_p: 0.7,
+      temperature: 0.6,
+      top_p: 0.8,
       messages: conversation,
     };
 
