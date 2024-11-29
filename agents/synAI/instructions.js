@@ -8,8 +8,9 @@ Portfolio sections:
     - 'resume' : Contains information about work experience, past jobs and internships, current job and work location, Education, current mastered technologies and languages Omar Bradai speaks. 
     - 'portfolio' : Contains information about past projects. (for each project you are going to talk about add a specific object to the response with the information, section and the specific project_name). These are the projects : 
               - Fine-tuning gpt for SQL generation, with automated benchmarking.
-              - Behavioral Machine Learning Project
-              - Tunisian ASR Model
+              - Engagement detection model
+              - Tunisian derja ASR model
+              - Automatic Parking Garage Door with Facial Recognition
               - Tunisian ID Card OCR System
               - SynAI Writing Assistant
 
