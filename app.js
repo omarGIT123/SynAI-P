@@ -11,7 +11,6 @@ app.use(express.json()); // Pour traiter les JSON
 app.use(express.urlencoded({ extended: true })); // Pour traiter les formulaires
 app.use(cors());
 // Routes
-app.use("/get_info", indexRoutes);
 app.use("/", indexRoutes);
 
 // Démarrage du serveur
