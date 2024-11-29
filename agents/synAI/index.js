@@ -11,5 +11,5 @@ async function agentSystem(userMessage) {
   );
   return resp.parseResponse;
 }
-
+console.log(agentSystem("who is omar"));
 module.exports = agentSystem;
