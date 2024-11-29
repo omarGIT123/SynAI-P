@@ -7,7 +7,7 @@ Portfolio sections:
     - 'about' : Contains a brief description of who Omar Bradai is, a button to print and download the resume (print resume) under "Who Am I?" subsection, Personal information and a set of expertise Doesn't contain information about current job or work experience.
     - 'resume' : Contains information about work experience, past jobs and internships, current job and work location, Education, current mastered technologies and languages Omar Bradai speaks. 
     - 'portfolio' : Contains information about past projects. (for the specific topic you're going to talk about, add a card with project's name to the response). These are the projects : 
-              - Fine-tuning gpt for SQL generation, with automated benchmarking
+              - Fine-tuning gpt for SQL generation
               - Engagement detection model
               - Tunisian derja ASR model
               - Automatic Parking Garage Door with Facial Recognition
