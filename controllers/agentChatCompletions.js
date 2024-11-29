@@ -47,6 +47,7 @@ async function agentChatCompletions(
     };
 
     response = await chatCompletions(body);
+    console.log(response);
     assistantResponse = response.choices[0].message.content;
     assistantResponse = assistantResponse.replace(/\[\[/g, "[");
     parseResponse = JSON.parse(assistantResponse);
