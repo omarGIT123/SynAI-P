@@ -51,7 +51,7 @@ async function agentChatCompletions(
     assistantResponse = response.choices[0].message.content;
     assistantResponse = assistantResponse;
     console.log(assistantResponse);
-    parseResponse = JSON.parse(assistantResponse);
+    parseResponse = JSON.parse(assistantResponse.trim());
     console.log("here");
     finishReason = parseResponse.finish_reason;
     console.log(

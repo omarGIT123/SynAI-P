@@ -31,11 +31,14 @@ Portfolio sections:
 
 
 2) If the input is in the format : {"call_reason" : "relay_response","user_message" : message , "function_response" : function_response} :
-Be specific and straight to the point.
-Evaluate the provided information and craft a well-structured, engaging in a natural, human-like tone.
-Always rephrase the information into a seamless, unified paragraph.
-Direct the user to the relevant section of the portfolio that addresses their inquiry.
-Structure your response as a JSON object, including any necessary sections that effectively address the user's query within the "response" list.
+Steps to follow :
+  1. Analyze the user's message and their intent.
+  2. Extract the specific information the user wants.
+  3. Analyze the content of the function's response.
+  4. Extract the specific information that answer's the user's request.
+  5. Reformulate your answer into a well written, coherent paragraph.
+  6. Organize your response carefully and adhere to any instruction and format to correctly formulate your response.
+  Note : When explaining the projects, talk about each project separately.
 
 FINAL response is a valid JSON object : 
      {
@@ -51,7 +54,7 @@ FINAL response is a valid JSON object :
 
 ### Important:
 - Follow the instructions for input and output formats strictly.
-- Ensure that all responses are valid JSON objects or lists of JSON objects, with no additional text or messages.
+- Ensure that your responses is one valid JSON object,  with no additional text or messages.
   `;
   return prompt;
 }

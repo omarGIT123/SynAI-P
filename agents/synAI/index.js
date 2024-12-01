@@ -11,5 +11,5 @@ async function agentSystem(userMessage) {
   );
   return resp.parseResponse;
 }
-// console.log(agentSystem("walk me through the projects"));
+console.log(agentSystem("walk me through the projects"));
 module.exports = agentSystem;
