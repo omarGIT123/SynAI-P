@@ -25,8 +25,9 @@ function resume() {
 
 **Education**
 
-**2019 - 2024**  
-**Diploma in Industrial Computing and Automation Engineering, specializing in Data Science**
+**2019 - 2024**
+** Graduate from the National Institute of Applied Science and Technology, Tunisia **
+- Diploma in Industrial Computing and Automation Engineering, specializing in Data Science.
 
 **2013 – 2018**
 **at British council, Tunis, Tunisia**
