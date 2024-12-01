@@ -1,7 +1,6 @@
 function resume() {
   const prompt = `
-- Section : 'resume' 
-     
+- Section : 'resume'
 
 **Work Experience**
 
@@ -14,10 +13,10 @@ function resume() {
 - Conducted R&D on AI-driven systems to predict employee behavioral trends and resignation, using machine learning customized for client data.  
 
 **07/2023 - 09/2023**  
-**Machine Learning Engineering Intern**  
+**Machine Learning Engineering Intern at Influence Consulting**  
 - Developed an automatic speech recognition (ASR) model fine-tuned for the Tunisian dialect.  
 - Created a dataset of 1,000+ transcriptions and 1+ hour of recordings, utilizing tools like NumPy, OpenCV, and TensorFlow.  
-- Built the infrastructure of the project’s web platform using Terraform, AWS, Docker, and DevOps tools like Bitbucket.  
+- Built the infrastructure of the project's web platform using Terraform, AWS, Docker, and DevOps tools like Bitbucket.  
 
 **06/2023 - 08/2023**  
 **Mobile Development Intern at Tnker**  
@@ -27,7 +26,12 @@ function resume() {
 **Education**
 
 **2019 - 2024**  
-**Diploma in Industrial Computing and Automation Engineering, specializing in Data Science**  `;
+**Diploma in Industrial Computing and Automation Engineering, specializing in Data Science**
+
+**2013 – 2018**
+**at British council, Tunis, Tunisia**
+- Degree: First Certificate in English (FCE) with a C1 level in English`;
+
   return prompt;
 }
 
