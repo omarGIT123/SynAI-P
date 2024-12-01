@@ -1,6 +1,6 @@
 function home() {
   const prompt = `
--Home:
+-Section : 'Home' 
 
 -Name: Omar Bradai
 -Field: AI Engineer

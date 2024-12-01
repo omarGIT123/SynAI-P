@@ -1,7 +1,9 @@
 function resume() {
   const prompt = `
-- resume :
-     **Work Experience**
+- Section : 'resume' 
+     
+
+**Work Experience**
 
 **04/2024 - Present**  
 **AI Engineer at EmyeHR**  

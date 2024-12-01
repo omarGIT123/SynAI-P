@@ -1,6 +1,6 @@
 function about() {
   const prompt = `
-About:
+-Section : 'about'
 
 -Information: Omar is a passionate AI Engineer with a solid academic background, focusing on innovative advancements in AI.
 -Personal Info:

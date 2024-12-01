@@ -1,7 +1,8 @@
 function portfolio() {
   const prompt = `
-    -Portfolio:
+    -Section : 'Portfolio'
 
+Projects : 
 1) - name : Fine-tuning GPT-3.5 for SQL Generation:
 -details : The SQL Synthetic Data Generation Pipeline automates the creation, validation, and storage of SQL query examples for training large language models like GPT and Llama-3, focusing on SQL comprehension. It uses GPT-4 to generate diverse SQL queries, executes them on PostgreSQL, validates results with OpenAI's API, and stores them in JSONL format for easy integration into training datasets. This pipeline significantly accelerates the production of high-quality SQL data, improving model training efficiency and scalability.
 
@@ -12,7 +13,7 @@ Technologies: Python, GPT, Azure Studio, SQL
 -details : The AI Behavior Model Data Transformation project converts transactional data into actionable insights, improving enterprise decision-making and employee engagement tracking. It features a real-time alert system to identify at-risk employees, progressive learning to refine predictions, and a workflow that transforms raw data into trends, detects behavioral risks, and generates alerts. This system enhances workforce management by providing proactive retention strategies and continuous model updates based on new data.
 -Technologies: Python, Machine Learning, Online Learning
 
-3) - name : Tunisian ASR Model: 
+3) - name : Tunisian derja ASR model: 
 -details : The ASR Model for Tunisian Derja Dialect focuses on building a speech recognition system tailored to the Tunisian Derja dialect, incorporating local linguistic features and bilingual elements (French and English). It uses a custom KenLM language model, supports dynamic resampling for various audio frequencies, and enables real-time transcription. The model processes and segments audio, applies dialect-specific detection, and outputs accurate transcriptions, advancing ASR capabilities for regional languages. Referencing Salah Zaiem (PhD Candidate): zaiemsalah@gmail.com for his amazing work on this matter.
 -Technologies: Python, ASR, NLP
 
