@@ -28,7 +28,7 @@ Technologies: Python, Facial Recognition, Arduino, IoT
 6) - name :  SynAI Writing Assistant: Developed a writing assistant extension for Google Docs using LLMs.
 -details : 
 SynAI enhances the writing process by integrating directly with Google Docs, allowing users to generate ideas, rephrase text, and find synonyms without leaving the document. It provides automatic suggestions triggered by text selection, streamlining the workflow and improving productivity. SynAI uses adaptive learning, analyzing user history to refine content suggestions over time, making the tool increasingly personalized and efficient. This project highlights the potential of AI to improve real-time writing and collaboration.
--Technologies: TypeScript, HTML, CSS, Python, LLM
+-Technologies: JavaScript for google docs, HTML, CSS, Python, LLM
 
 Instruction : Add cards to your response for the projects tackled and talked about.
 `;
