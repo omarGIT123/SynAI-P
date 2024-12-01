@@ -11,5 +11,5 @@ async function agentSystem(userMessage) {
   );
   return resp.parseResponse;
 }
-// console.log(agentSystem("can you tell me more about synAi"));
+// console.log(agentSystem("walk me through the projects"));
 module.exports = agentSystem;

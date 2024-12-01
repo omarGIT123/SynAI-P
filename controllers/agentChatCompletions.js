@@ -41,15 +41,16 @@ async function agentChatCompletions(
     const body = {
       model,
       max_tokens: 2000,
-      temperature: 0.7,
-      top_p: 0.6,
+      temperature: 0.5,
+      top_p: 0.1,
       messages: conversation,
     };
 
     response = await chatCompletions(body);
     console.log(response);
     assistantResponse = response.choices[0].message.content;
-    assistantResponse = assistantResponse.replace(/\[\[/g, "[");
+    assistantResponse = assistantResponse;
+    console.log(assistantResponse);
     parseResponse = JSON.parse(assistantResponse);
     console.log("here");
     finishReason = parseResponse.finish_reason;
@@ -76,8 +77,21 @@ async function agentChatCompletions(
         let toolArgs = tool.args;
         try {
           // If it's a valid JSON string that can be parsed into an array, do it
-          const parsedSection = JSON.parse(toolArgs.section.replace(/'/g, '"'));
-
+          console.log(typeof toolArgs.sections);
+          let parsedSection = null;
+          if (
+            typeof toolArgs.sections == "string" ||
+            typeof toolArgs.section == "string"
+          ) {
+            console.log("here");
+            parsedSection =
+              JSON.parse(toolArgs.sections) || JSON.parse(toolArgs.section);
+            console.log(parsedSection);
+          } else {
+            console.log("here 2");
+            parsedSection = toolArgs.sections || toolArgs.section;
+          }
+          console.log(parsedSection);
           // Check if the parsed result is an array
           if (Array.isArray(parsedSection)) {
             toolArgs = parsedSection; // Wrap in an array
