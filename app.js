@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 // Allow all origins by using a wildcard
 app.use(
   cors({
-    origin: "https://omar-bradai-portfolio.onrender.com",
+    origin: "*",  // Allow all origins temporarily for testing
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
