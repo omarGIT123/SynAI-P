@@ -7,9 +7,8 @@ async function agentChatCompletions(
   tools,
   userMessage
 ) {
-  let countExec = 0;
   const model = "meta-llama/llama-3.2-3b-instruct:free";
-  // Prepare tool definitions if any tools are provided
+  let countExec = 0;
   const toolsUse = toolDefs?.length
     ? toolDefs.map((fn) => ({ type: "function", function: fn }))
     : undefined;
@@ -17,25 +16,20 @@ async function agentChatCompletions(
     call_reason: "call_function",
     user_message: userMessage.toLowerCase(),
   };
-  let response;
-  let assistantResponse;
-  let finishReason;
-  let parseResponse;
+
+  let response, assistantResponse, finishReason, parseResponse;
   let conversation = [
     {
       role: "system",
       content: instructions + "\nTools : " + JSON.stringify(toolsUse),
     },
-    {
-      role: "user",
-      content: JSON.stringify(parsedMessage),
-    },
+    { role: "user", content: JSON.stringify(parsedMessage) },
   ];
+
   console.log(
     `\n ---- Agent ${agentName} called with conversation: ${conversation} --- \n`
   );
 
-  // Execute the loop to handle conversation and tool calls
   do {
     countExec++;
     const body = {
@@ -47,73 +41,53 @@ async function agentChatCompletions(
     };
 
     response = await chatCompletions(body);
-    console.log(response);
-    assistantResponse = response.choices[0].message.content;
-    assistantResponse = assistantResponse;
-    console.log(assistantResponse);
-    parseResponse = JSON.parse(assistantResponse.trim());
-    console.log("here");
-    finishReason = parseResponse.finish_reason;
-    console.log(
-      "FINISH REASON: ",
-      finishReason,
-      "FINISH REASON'S RESPONSE: ",
-      assistantResponse
-    );
+    assistantResponse = response.choices[0].message.content.trim();
+    console.log("Assistant Response:", assistantResponse);
 
-    if (finishReason == "tool_calls") {
+    try {
+      parseResponse = JSON.parse(assistantResponse);
+      finishReason = parseResponse.finish_reason;
+      console.log("Finish Reason:", finishReason);
+    } catch (error) {
+      console.error("Error parsing response:", error);
+      break;
+    }
+
+    if (finishReason === "tool_calls") {
       const functions = parseResponse.functions;
       if (!functions)
         throw createHttpError(500, "No tool calls found in the LLM response");
-      console.log(functions);
 
-      for (const toolIndex in functions) {
-        const tool = functions[toolIndex];
-        console.log(tool);
+      for (const tool of functions) {
         const toolName = tool.name;
-        console.log("toolCall." + toolName);
-        console.log(tool.args);
-        const toolToCall = tools[toolName];
-        let toolArgs = tool.args;
+        const toolArgs = tool.args;
+
+        console.log("Calling tool:", toolName, "with arguments:", toolArgs);
+
+        let parsedSection;
         try {
-          // If it's a valid JSON string that can be parsed into an array, do it
-          console.log(typeof toolArgs.sections);
-          let parsedSection = null;
-          if (
-            typeof toolArgs.sections == "string" ||
-            typeof toolArgs.section == "string"
-          ) {
-            console.log("here");
-            parsedSection =
-              JSON.parse(toolArgs.sections) || JSON.parse(toolArgs.section);
-            console.log(parsedSection);
-          } else {
-            console.log("here 2");
-            parsedSection = toolArgs.sections || toolArgs.section;
-          }
-          console.log(parsedSection);
-          // Check if the parsed result is an array
+          parsedSection =
+            typeof toolArgs.sections === "string" ||
+            typeof toolArgs.section === "string"
+              ? JSON.parse(toolArgs.sections || toolArgs.section)
+              : toolArgs.sections || toolArgs.section;
+
           if (Array.isArray(parsedSection)) {
-            toolArgs = parsedSection; // Wrap in an array
+            toolArgs = parsedSection;
           } else {
-            toolArgs = [toolArgs.section]; // It's not an array, just put the string in an array
+            toolArgs = [toolArgs.section];
           }
         } catch (e) {
-          // If parsing fails, treat it as a plain string and wrap in an array
           toolArgs = [toolArgs.section];
         }
-        console.log("toolName", toolName, "toolArgs", toolArgs);
-        try {
-          // Execute the tool and wait for the response
-          const toolResponse = await toolToCall(toolArgs);
-          console.log("toolResponse", toolResponse);
 
-          // Add the tool's response to the conversation
+        const toolToCall = tools[toolName];
+        try {
+          const toolResponse = await toolToCall(toolArgs);
+          console.log("Tool response:", toolResponse);
+
           conversation = [
-            {
-              role: "system",
-              content: instructions,
-            },
+            { role: "system", content: instructions },
             {
               role: "user",
               content: JSON.stringify({
@@ -125,7 +99,7 @@ async function agentChatCompletions(
           ];
         } catch (error) {
           console.error(`Error executing tool ${toolName}:`, error);
-          // Optionally handle errors for tool failures
+
           conversation.push({
             role: "system",
             content: JSON.stringify({
@@ -136,13 +110,12 @@ async function agentChatCompletions(
         }
       }
     }
-    // Check if tool calls are needed based on finishReason
   } while (finishReason === "tool_calls" && countExec < 10);
 
   console.log("-----------------------------------");
-  console.log("RESPONSE FROM ", agentName, ":", assistantResponse);
-  console.log("finishReason", finishReason);
-  console.log("countExec", countExec);
+  console.log("Response from", agentName, ":", assistantResponse);
+  console.log("Finish Reason:", finishReason);
+  console.log("Execution Count:", countExec);
   console.log("-----------------------------------");
 
   return {
