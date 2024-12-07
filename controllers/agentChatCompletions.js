@@ -47,11 +47,12 @@ async function agentChatCompletions(
 
     response = await chatCompletions(body);
     console.log(response);
+
     assistantResponse = response.choices[0].message.content;
     assistantResponse = assistantResponse;
     console.log(assistantResponse);
+
     parseResponse = JSON.parse(assistantResponse.trim());
-    console.log("here");
     finishReason = parseResponse.finish_reason;
     console.log(
       "FINISH REASON: ",
@@ -69,9 +70,11 @@ async function agentChatCompletions(
       for (const toolIndex in functions) {
         const tool = functions[toolIndex];
         console.log(tool);
+
         const toolName = tool.name;
         console.log("toolCall." + toolName);
         console.log(tool.args);
+
         const toolToCall = tools[toolName];
         let toolArgs = tool.args;
         try {
@@ -81,12 +84,10 @@ async function agentChatCompletions(
             typeof toolArgs.sections == "string" ||
             typeof toolArgs.section == "string"
           ) {
-            console.log("here");
             parsedSection =
               JSON.parse(toolArgs.sections) || JSON.parse(toolArgs.section);
             console.log(parsedSection);
           } else {
-            console.log("here 2");
             parsedSection = toolArgs.sections || toolArgs.section;
           }
           console.log(parsedSection);
@@ -100,6 +101,7 @@ async function agentChatCompletions(
           toolArgs = [toolArgs.section];
         }
         console.log("toolName", toolName, "toolArgs", toolArgs);
+
         try {
           const toolResponse = await toolToCall(toolArgs);
           console.log("toolResponse", toolResponse);
