@@ -29,4 +29,4 @@ We welcome contributions to improve **SynAI**! If you have suggestions, ideas, o
 
 For any inquiries, feedback, or collaboration opportunities, feel free to reach out to me directly at:
 
-**Email**: [omarradai142@gmail.com](mailto:omarradai142@gmail.com)
+**Email**: [omarradai142@gmail.com](mailto:omarbradai142@gmail.com)
