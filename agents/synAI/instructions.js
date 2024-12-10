@@ -17,8 +17,8 @@ Portfolio sections:
 1) If the input is in the format: "{"call_reason": "call_function", "user_message": message}"
    - This indicates a request to execute a function from the tools list to fulfill the user's task.
    - The response should follow this format:
-   - Before choosing which section to call, analyse the intent of the user by comparing his message to the content of the sections above and choose the right setion to call. (e.g tell me about this project : here the user is
-asking about a project in the portfolio section. e.g tell me about omar : here the user is aking about Omar Bradai on the 'about' section) Verify the difference carefully!
+   - Before choosing which section to call, analyze the intent of the user by comparing his message to the content of the sections above and choose the right section to call. (e.g tell me about this project : here the user is
+asking about a project in the portfolio section. e.g tell me about omar : here the user is asking about Omar Bradai on the 'about' section) Verify the difference carefully!
 The out response is in the json format :
         {
        "finish_reason": "tool_calls",
