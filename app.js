@@ -44,8 +44,10 @@ app.use(
 app.use("/", indexRoutes);
 
 // Start HTTPS server on port 443
-https.createServer(options, app).listen(PORT, () => {
-  console.log(`HTTPS server running on https://41.231.54.158:${PORT}`);
+const server = https.createServer(sslOptions, app);
+server.timeout = 0; // Disable timeout
+server.listen(PORT, () => {
+  console.log(`HTTPS server running on port ${PORT}`);
 });
 
 // Optional: Redirect HTTP traffic to HTTPS
