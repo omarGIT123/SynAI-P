@@ -20,6 +20,10 @@ Technologies: Python, Facial Recognition, Arduino, IoT
 SynAI enhances the writing process by integrating directly with Google Docs, allowing users to generate ideas, rephrase text, and find synonyms without leaving the document. It provides automatic suggestions triggered by text selection, streamlining the workflow and improving productivity. SynAI uses adaptive learning, analyzing user history to refine content suggestions over time, making the tool increasingly personalized and efficient. This project highlights the potential of AI to improve real-time writing and collaboration.
 -Technologies: JavaScript for google docs, HTML, CSS, Python, LLM
 
+5) - name : Real-Time Gaze Coordinate Tracking System :
+-details : The GazeTrack system is an efficient and automated gaze coordinate tracking solution that utilizes a simple data generation script. This script captures gaze data by allowing the user to gaze at specific positions on a black screen and click, registering the coordinates. It then captures images from a webcam, crops them to focus on the eyes, and saves both the full and cropped images along with the gaze coordinates in a JSON file. Data augmentation techniques such as brightness, contrast, and sharpening are applied to increase dataset diversity. The system has generated a rich dataset of approximately 10,000 data points, which is used for training a Vision Transformer model to predict gaze coordinates with high precision.
+-Technologies: Python, Scikit-learn, Pytorch
+
 Instruction : Add cards to your response for the projects tackled and talked about.
 `;
   return prompt;

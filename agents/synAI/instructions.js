@@ -12,6 +12,7 @@ Portfolio sections:
               - Automatic Parking Garage Door with Facial Recognition
               - Tunisian ID Card OCR System
               - SynAI Writing Assistant
+              - Real-Time Gaze Coordinate Tracking System
 
 
 1) If the input is in the format: "{"call_reason": "call_function", "user_message": message}"
