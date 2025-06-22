@@ -10,7 +10,7 @@ require("dotenv").config();
 // --- START OF CHANGES ---
 
 // Use a different port for local development
-const PORT = !process.env.isDev
+const PORT = process.env.NODE_ENV == 'production'
     ? process.env.PORT || 443 
     : 4000; 
 // Middleware global
