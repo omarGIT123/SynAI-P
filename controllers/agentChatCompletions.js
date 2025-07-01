@@ -39,7 +39,7 @@ async function agentChatCompletions(
     countExec++;
     const body = {
       model,
-      max_tokens: 2000,
+      max_tokens: 4000,
       temperature: 0.1,
       top_p: 0.1,
       messages: conversation,
@@ -108,7 +108,7 @@ async function agentChatCompletions(
 
           conversation = [
             {
-              role: "system",
+              role: "assistant",
               content: instructions,
             },
             {
@@ -123,7 +123,7 @@ async function agentChatCompletions(
         } catch (error) {
           console.error(`Error executing tool ${toolName}:`, error);
           conversation.push({
-            role: "system",
+            role: "assistant",
             content: JSON.stringify({
               call_reason: "relay_response",
               function_response: `Error executing tool ${toolName}: ${error.message}`,

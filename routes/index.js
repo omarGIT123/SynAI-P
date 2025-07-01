@@ -5,8 +5,6 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   try {
     const { input } = req.body;
-
-    // Call the agent system with the input
     const response = await agentSystem(input);
     res.json(response);
   } catch (error) {
