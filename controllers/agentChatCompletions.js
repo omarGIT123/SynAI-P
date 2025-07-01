@@ -8,7 +8,7 @@ async function agentChatCompletions(
   userMessage
 ) {
   let countExec = 0;
-  const model = "meta-llama/llama-3.2-3b-instruct:free";
+  const model = "mistralai/mistral-small-3.2-24b-instruct:free";
 
   const toolsUse = toolDefs?.length
     ? toolDefs.map((fn) => ({ type: "function", function: fn }))
@@ -47,7 +47,7 @@ async function agentChatCompletions(
 
     response = await chatCompletions(body);
     console.log(response);
-
+    
     assistantResponse = response.choices[0].message.content;
     assistantResponse = assistantResponse;
     console.log(assistantResponse);
