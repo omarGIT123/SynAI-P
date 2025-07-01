@@ -51,6 +51,9 @@ async function agentChatCompletions(
     assistantResponse = response.choices[0].message.content;
     assistantResponse = assistantResponse;
     console.log(assistantResponse);
+    // clean json response  ```json and ```
+    assistantResponse = assistantResponse.replace(/```json/g, "");
+    assistantResponse = assistantResponse.replace(/```/g, "");
 
     parseResponse = JSON.parse(assistantResponse.trim());
     finishReason = parseResponse.finish_reason;
