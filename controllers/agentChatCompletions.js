@@ -55,7 +55,12 @@ async function agentChatCompletions(
     assistantResponse = assistantResponse.replace(/```json/g, "");
     assistantResponse = assistantResponse.replace(/```/g, "");
 
-    parseResponse = JSON.parse(assistantResponse.trim());
+   try {
+  parseResponse = JSON.parse(assistantResponse.trim());
+} catch (err) {
+  console.error("[ERROR] Failed to parse assistant response:", assistantResponse);
+  throw new Error("Invalid JSON from assistant");
+}
     finishReason = parseResponse.finish_reason;
     console.log(
       "FINISH REASON: ",
