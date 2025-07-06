@@ -6,10 +6,12 @@ router.post("/", async (req, res) => {
   try {
     const { input } = req.body;
     const response = await agentSystem(input);
-    res.json(response);
+    return res.json(response);
   } catch (error) {
     console.error("Error:", error);
-    res.status(500).json({ error: "Failed to process request" });
+    if (!res.headersSent) {
+      res.status(500).json({ error: "Failed to process request" });
+    }
   }
 });
 
