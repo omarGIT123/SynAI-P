@@ -6,7 +6,7 @@ router.post("/", async (req, res) => {
   try {
     const { input } = req.body;
     const response = await agentSystem(input);
-    return res.json(response);
+    if (!res.headersSent) return res.json(response);
   } catch (error) {
     console.error("Error:", error);
     if (!res.headersSent) {
