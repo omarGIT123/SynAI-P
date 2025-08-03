@@ -30,14 +30,13 @@ app.use(
       } else {
         callback(new Error("Not allowed by CORS"));
       }
-      return callback(null, true);
     },
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
 
-app.use("/", indexRoutes);
+app.use("/api", indexRoutes);
 const server = http.createServer(app);
 
 server.listen(PORT, () => {
