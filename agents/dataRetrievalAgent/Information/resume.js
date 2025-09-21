@@ -4,19 +4,31 @@ function resume() {
 
 **Work Experience**
 
-**04/2024 - Present**  
-**AI Engineer at EmyeHR**  
-- Optimized integration between chat agents and the Emye bot for improved prompt quality and cost efficiency.  
-- Fine-tuned GPT-3.5 for efficient SQL generation tailored to company data.  
-- Developed an automatic synthetic data generation program using GPT.  
-- Built benchmarking systems to evaluate agent performance and visualize results.  
-- Conducted R&D on AI-driven systems to predict employee behavioral trends and resignation, using machine learning customized for client data.  
+**04/2025 - Present**  
+**LLM & Full Stack Engineer at Navero LTD (Remote, United Kingdom - London)**  
+- Developed pipelines leveraging Large Language Models (LLMs) for CV analysis, test generation, and document processing.  
+- Engineered prompt design, tuning, and versioning, including LLM consumption tracking across services.  
+- Designed and deployed background jobs and microservices using Python, RabbitMQ, and Redis.  
+- Built and maintained databases and backend applications, integrating RESTful services and third-party APIs.  
+- Developed user-centric front-end architectures with Next.js, TypeScript, Redux, and cloud infrastructure (GCP), ensuring scalable and performant solutions.  
+- Automated repetitive workflows, boosting team productivity and reducing manual effort.  
+- Oversaw testing, deployment, and optimization of full-stack features for speed, reliability, and seamless user experience.  
 
-**07/2023 - 09/2023**  
-**Machine Learning Engineering Intern at Influence Consulting**  
-- Developed an automatic speech recognition (ASR) model fine-tuned for the Tunisian dialect.  
-- Created a dataset of 1,000+ transcriptions and 1+ hour of recordings, utilizing tools like NumPy, OpenCV, and TensorFlow.  
-- Built the infrastructure of the project's web platform using Terraform, AWS, Docker, and DevOps tools like Bitbucket.  
+**03/2024 - 04/2025**  
+**AI & Full Stack Engineer at EmyeHR (Tunisia)**  
+- Automated HR workflows with Generative AI conversational agents, reducing manual effort and response times.  
+- Fine-tuned GPT-3.5 models for efficient SQL query generation on company datasets.  
+- Designed and optimized PostgreSQL databases, improving query performance and scalability.  
+- Developed AI-powered web modules: Angular (UI) and Node.js (APIs and business logic).  
+- Built synthetic data pipelines with LLMs and CUDA and created benchmarking systems with visualizations to support data-driven decisions.  
+- Conducted predictive HR analytics R&D using scikit-learn, online and batch learning for employee behavior and attrition trends.  
+- Delivered full SDLC ownership in agile teams, optimizing frontend and backend performance for scalable, reliable solutions.  
+
+**06/2023 - 08/2023**  
+**Machine Learning Intern at Influence Consulting (Tunisia)**  
+- Developed an ASR model for the Tunisian dialect, reducing WER and CER by 10% compared to existing models.  
+- Built and processed a dataset of 1000+ transcriptions, applying NumPy, OpenCV, and TensorFlow for preprocessing and optimization.  
+- Implemented the project's web platform infrastructure using Terraform, AWS, Docker, and Bitbucket, enabling scalable deployment and efficient workflows.  
 
 **06/2023 - 08/2023**  
 **Mobile Development Intern at Tnker**  

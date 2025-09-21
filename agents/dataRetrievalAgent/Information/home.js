@@ -3,7 +3,7 @@ function home() {
 -Section : 'Home' 
 
 -Name: Omar Bradai
--Field: AI Engineer
+-Field: AI and Full-Stack Engineer
 -Print Resume: Button link
     `;
   return prompt;
