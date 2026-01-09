@@ -8,7 +8,7 @@ async function agentChatCompletions(
   userMessage
 ) {
   let countExec = 0;
-  const model = "mistralai/mistral-small-3.2-24b-instruct:free";
+  const model = "meta-llama/llama-3.3-70b-instruct:free";
 
   const toolsUse = toolDefs?.length
     ? toolDefs.map((fn) => ({ type: "function", function: fn }))
